@@ -1,4 +1,4 @@
-%global commit      3251a420c066c093a54673304be89397287744e8
+%global commit      c5f63ec2c5511e4af0f4a5a839dbfd995bd77fd4
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global shortname   olive
 %global appname     org.olivevideoeditor.Olive
@@ -75,6 +75,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{appname}.app
 
 
 %changelog
+* Sun Apr 21 2019 Alberto Chiusole <bebo.sudo@gmail.com> - 20190420gitc5f63ec-1
+- Update upstream to new nightly release
+
 * Sat Apr 20 2019 Alberto Chiusole <bebo.sudo@gmail.com> - 20190420git3251a42-1
 - Update upstream
 - Fix dependencies for rhel and derivatives
