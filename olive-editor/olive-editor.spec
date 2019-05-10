@@ -1,16 +1,13 @@
-%global commit      c5f63ec2c5511e4af0f4a5a839dbfd995bd77fd4
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global shortname   olive
 %global appname     org.olivevideoeditor.Olive
 
 Name:       olive-editor
-Version:    20190420git%{shortcommit}
+Version:    0.1.0
 Release:    1%{?dist}
 Summary:    Professional open-source NLE video editor
-
 License:    GPLv3
 URL:        https://www.olivevideoeditor.org
-Source0:    https://github.com/%{name}/%{shortname}/archive/%{commit}/%{shortname}-%{shortcommit}.tar.gz
+Source0:    https://github.com/%{name}/%{shortname}/archive/%{version}.tar.gz
 
 %{?rhel:BuildRequires:    qt5-qtbase-devel}
 %{?fedora:BuildRequires:  qt5-devel}
@@ -19,6 +16,8 @@ BuildRequires:  frei0r-devel
 BuildRequires:  gcc
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
+# cmake >= 3.9, not available in RHEL 6/7
+BuildRequires:  cmake
 
 %{?rhel:Requires:    qt5-qtbase}
 %{?fedora:Requires:  qt5}
@@ -41,16 +40,15 @@ This package contains doxygen-generated html API documentation for %{name}.
 
 
 %prep
-%autosetup -n %{shortname}-%{commit}
+%autosetup -n %{shortname}-%{version}
 
 %build
-%cmake -DOpenGL_GL_PREFERENCE=LEGACY .
+%cmake -DBUILD_DOXYGEN=ON .
 %make_build
 
 %install
 %make_install
 
-doxygen
 mkdir -p %{buildroot}%{_docdir}/%{name}
 mv docs/ %{buildroot}%{_docdir}/%{name}
 
@@ -75,6 +73,12 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{appname}.app
 
 
 %changelog
+* Fri May 10 2019 Alberto Chiusole <bebo.sudo@gmail.com> - 0.1.0-1
+- Update to 0.1.0 release
+- No more need to explicitly compile with -DOpenGL_GL_PREFERENCE=LEGACY, see #810
+- Move doxygen compilation inside cmake, see #759
+- RHEL 6/7 build still not available due to cmake >= 3.9 requirement
+
 * Sun Apr 21 2019 Alberto Chiusole <bebo.sudo@gmail.com> - 20190420gitc5f63ec-1
 - Update upstream to new nightly release
 
