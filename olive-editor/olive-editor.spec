@@ -66,7 +66,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{appname}.app
 %{_metainfodir}/%{appname}.appdata.xml
 %{_datadir}/mime/packages/%{appname}.xml
 %{_datadir}/icons/hicolor/*/apps/%{appname}.png
-%{_datadir}/icons/hicolor/*/mymetypes/%{mimetype}.png
+%{_datadir}/icons/hicolor/*/mimetypes/%{mimetype}.png
 
 %files doc
 %license LICENSE
