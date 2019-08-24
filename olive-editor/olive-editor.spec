@@ -2,6 +2,11 @@
 %global appname     org.olivevideoeditor.Olive
 %global mimetype    application-vnd.olive-project
 
+# RHEL 7 provides cmake 2 and cmake 3, so we force the use of cmake3
+%if 0%{?rhel}
+%global cmake       %cmake3
+%endif
+
 Name:       olive-editor
 Version:    0.1.0
 Release:    2%{?dist}
@@ -10,15 +15,12 @@ License:    GPLv3
 URL:        https://www.olivevideoeditor.org
 Source0:    https://github.com/%{name}/%{shortname}/archive/%{version}.tar.gz
 
-%{?rhel:BuildRequires:    qt5-qtbase-devel}
-%{?fedora:BuildRequires:  qt5-devel}
-%{?rhel:BuildRequires:    cmake3}
-%{?fedora:BuildRequires:  cmake}
-BuildRequires:  ffmpeg-devel
-BuildRequires:  frei0r-devel
-BuildRequires:  gcc
-BuildRequires:  desktop-file-utils
-BuildRequires:  libappstream-glib
+%{?rhel:BuildRequires:      qt5-qtbase-devel, qt5-qtmultimedia-devel, qt5-qtsvg-devel, qt5-linguist}
+%{?rhel:BuildRequires:      cmake3}
+%{?fedora:BuildRequires:    qt5-devel}
+%{?fedora:BuildRequires:    cmake}
+BuildRequires:              gcc, ffmpeg-devel, frei0r-devel
+BuildRequires:              desktop-file-utils, libappstream-glib
 
 %{?rhel:Requires:    qt5-qtbase}
 %{?fedora:Requires:  qt5}
@@ -53,6 +55,9 @@ This package contains doxygen-generated html API documentation for %{name}.
 mkdir -p %{buildroot}%{_docdir}/%{name}
 mv docs/ %{buildroot}%{_docdir}/%{name}
 
+# RHEL uses /usr/share/appdata/ as metainfo dir, so move to it.
+%{?rhel: mv %{buildroot}%{_datadir}/metainfo/ %{buildroot}%{_metainfodir}}
+
 %check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{appname}.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{appname}.appdata.xml
@@ -76,7 +81,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{appname}.app
 
 %changelog
 * Sat Aug 24 2019 Alberto Chiusole <bebo.sudo@gmail.com> - 0.1.0-2
-- Use cmake3 for RHEL 7
+- Use cmake3 macro for RHEL 7
 
 * Fri May 10 2019 Alberto Chiusole <bebo.sudo@gmail.com> - 0.1.0-1
 - Update to 0.1.0 release
