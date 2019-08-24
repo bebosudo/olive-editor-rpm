@@ -4,7 +4,7 @@
 
 Name:       olive-editor
 Version:    0.1.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Professional open-source NLE video editor
 License:    GPLv3
 URL:        https://www.olivevideoeditor.org
@@ -12,13 +12,13 @@ Source0:    https://github.com/%{name}/%{shortname}/archive/%{version}.tar.gz
 
 %{?rhel:BuildRequires:    qt5-qtbase-devel}
 %{?fedora:BuildRequires:  qt5-devel}
+%{?rhel:BuildRequires:    cmake3}
+%{?fedora:BuildRequires:  cmake}
 BuildRequires:  ffmpeg-devel
 BuildRequires:  frei0r-devel
 BuildRequires:  gcc
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
-# cmake >= 3.9, not available in RHEL 6/7
-BuildRequires:  cmake
 
 %{?rhel:Requires:    qt5-qtbase}
 %{?fedora:Requires:  qt5}
@@ -75,6 +75,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{appname}.app
 
 
 %changelog
+* Sat Aug 24 2019 Alberto Chiusole <bebo.sudo@gmail.com> - 0.1.0-2
+- Use cmake3 for RHEL 7
+
 * Fri May 10 2019 Alberto Chiusole <bebo.sudo@gmail.com> - 0.1.0-1
 - Update to 0.1.0 release
 - No more need to explicitly compile with -DOpenGL_GL_PREFERENCE=LEGACY, see #810
