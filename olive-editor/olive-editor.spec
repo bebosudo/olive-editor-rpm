@@ -8,8 +8,8 @@
 %endif
 
 Name:       olive-editor
-Version:    0.1.0
-Release:    2%{?dist}
+Version:    0.1.2
+Release:    1%{?dist}
 Summary:    Professional open-source NLE video editor
 License:    GPLv3
 URL:        https://www.olivevideoeditor.org
@@ -80,6 +80,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{appname}.app
 
 
 %changelog
+* Mon Nov 11 2019 Alberto Chiusole <bebo.sudo@gmail.com> - 0.1.2-1
+- Update to 0.1.2
+
 * Sat Aug 24 2019 Alberto Chiusole <bebo.sudo@gmail.com> - 0.1.0-2
 - Use cmake3 macro for RHEL 7
 
