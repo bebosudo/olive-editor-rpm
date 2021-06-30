@@ -14,13 +14,14 @@ Summary:    Professional open-source NLE video editor
 License:    GPLv3
 URL:        https://www.olivevideoeditor.org
 Source0:    https://github.com/%{name}/%{shortname}/archive/%{version}.tar.gz
+Patch0:     olive.patch
 
 %{?rhel:BuildRequires:      qt5-qtbase-devel, qt5-qtmultimedia-devel, qt5-qtsvg-devel, qt5-linguist}
 %{?rhel:BuildRequires:      cmake3}
-%{?fedora:BuildRequires:    qt5-devel}
 %{?fedora:BuildRequires:    cmake}
-BuildRequires:              gcc, ffmpeg-devel, frei0r-devel
+BuildRequires:              g++, gcc, ffmpeg-devel, frei0r-devel
 BuildRequires:              desktop-file-utils, libappstream-glib
+BuildRequires:              mesa-libGL-devel,
 
 %{?rhel:Requires:    qt5-qtbase}
 %{?fedora:Requires:  qt5}
@@ -44,6 +45,7 @@ This package contains doxygen-generated html API documentation for %{name}.
 
 %prep
 %autosetup -n %{shortname}-%{version}
+
 
 %build
 %cmake -DBUILD_DOXYGEN=ON .
