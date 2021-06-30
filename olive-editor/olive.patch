@@ -1,0 +1,44 @@
+diff -ruN 0.1.2/olive-0.1.2/effects/internal/texteffect.cpp 0.1.2-new/olive-0.1.2/effects/internal/texteffect.cpp
+--- 0.1.2/olive-0.1.2/effects/internal/texteffect.cpp	2019-11-11 03:05:02.000000000 -0300
++++ 0.1.2-new/olive-0.1.2/effects/internal/texteffect.cpp	2021-06-30 08:32:06.850201000 -0300
+@@ -25,6 +25,7 @@
+ #include <QOpenGLTexture>
+ #include <QTextEdit>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QPushButton>
+ #include <QColorDialog>
+ #include <QFontDatabase>
+diff -ruN 0.1.2/olive-0.1.2/effects/internal/timecodeeffect.cpp 0.1.2-new/olive-0.1.2/effects/internal/timecodeeffect.cpp
+--- 0.1.2/olive-0.1.2/effects/internal/timecodeeffect.cpp	2019-11-11 03:05:02.000000000 -0300
++++ 0.1.2-new/olive-0.1.2/effects/internal/timecodeeffect.cpp	2021-06-30 08:30:51.852980000 -0300
+@@ -25,6 +25,7 @@
+ #include <QOpenGLTexture>
+ #include <QTextEdit>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QPushButton>
+ #include <QColorDialog>
+ #include <QFontDatabase>
+diff -ruN 0.1.2/olive-0.1.2/ui/graphview.cpp 0.1.2-new/olive-0.1.2/ui/graphview.cpp
+--- 0.1.2/olive-0.1.2/ui/graphview.cpp	2019-11-11 03:05:02.000000000 -0300
++++ 0.1.2-new/olive-0.1.2/ui/graphview.cpp	2021-06-30 08:30:05.435847000 -0300
+@@ -21,6 +21,7 @@
+ #include "graphview.h"
+ 
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QMouseEvent>
+ #include <QtMath>
+ #include <cfloat>
+diff -ruN 0.1.2/olive-0.1.2/ui/timelineheader.cpp 0.1.2-new/olive-0.1.2/ui/timelineheader.cpp
+--- 0.1.2/olive-0.1.2/ui/timelineheader.cpp	2019-11-11 03:05:02.000000000 -0300
++++ 0.1.2-new/olive-0.1.2/ui/timelineheader.cpp	2021-06-30 08:29:39.035772000 -0300
+@@ -21,6 +21,7 @@
+ #include "timelineheader.h"
+ 
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QMouseEvent>
+ #include <QScrollBar>
+ #include <QtMath>
