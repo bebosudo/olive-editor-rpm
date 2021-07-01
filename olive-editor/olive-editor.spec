@@ -14,14 +14,14 @@ Summary:    Professional open-source NLE video editor
 License:    GPLv3
 URL:        https://www.olivevideoeditor.org
 Source0:    https://github.com/%{name}/%{shortname}/archive/%{version}.tar.gz
-Patch0:     olive-qpainterpath.patch
+Patch0:     olive.patch
 
 %{?rhel:BuildRequires:      qt5-qtbase-devel, qt5-qtmultimedia-devel, qt5-qtsvg-devel, qt5-linguist}
 %{?rhel:BuildRequires:      cmake3}
 %{?fedora:BuildRequires:    cmake}
 BuildRequires:              gcc, ffmpeg-devel, frei0r-devel
 BuildRequires:              desktop-file-utils, libappstream-glib
-BuildRequires:              mesa-libGL-devel
+BuildRequires:              mesa-libGL-devel,
 
 %{?rhel:Requires:    qt5-qtbase}
 %{?fedora:Requires:  qt5}
