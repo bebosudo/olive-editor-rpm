@@ -1,6 +1,6 @@
-diff -uNr olive-0.1.2/effects/internal/texteffect.cpp olive-0.1.2-new/effects/internal/texteffect.cpp
---- olive-0.1.2/effects/internal/texteffect.cpp	2019-11-11 03:05:02.000000000 -0300
-+++ olive-0.1.2-new/effects/internal/texteffect.cpp	2021-06-30 08:32:06.850201204 -0300
+diff -ruN 0.1.2/olive-0.1.2/effects/internal/texteffect.cpp 0.1.2-new/olive-0.1.2/effects/internal/texteffect.cpp
+--- 0.1.2/olive-0.1.2/effects/internal/texteffect.cpp	2019-11-11 03:05:02.000000000 -0300
++++ 0.1.2-new/olive-0.1.2/effects/internal/texteffect.cpp	2021-06-30 08:32:06.850201000 -0300
 @@ -25,6 +25,7 @@
  #include <QOpenGLTexture>
  #include <QTextEdit>
@@ -9,9 +9,9 @@ diff -uNr olive-0.1.2/effects/internal/texteffect.cpp olive-0.1.2-new/effects/in
  #include <QPushButton>
  #include <QColorDialog>
  #include <QFontDatabase>
-diff -uNr olive-0.1.2/effects/internal/timecodeeffect.cpp olive-0.1.2-new/effects/internal/timecodeeffect.cpp
---- olive-0.1.2/effects/internal/timecodeeffect.cpp	2019-11-11 03:05:02.000000000 -0300
-+++ olive-0.1.2-new/effects/internal/timecodeeffect.cpp	2021-06-30 08:30:51.852980865 -0300
+diff -ruN 0.1.2/olive-0.1.2/effects/internal/timecodeeffect.cpp 0.1.2-new/olive-0.1.2/effects/internal/timecodeeffect.cpp
+--- 0.1.2/olive-0.1.2/effects/internal/timecodeeffect.cpp	2019-11-11 03:05:02.000000000 -0300
++++ 0.1.2-new/olive-0.1.2/effects/internal/timecodeeffect.cpp	2021-06-30 08:30:51.852980000 -0300
 @@ -25,6 +25,7 @@
  #include <QOpenGLTexture>
  #include <QTextEdit>
@@ -20,9 +20,9 @@ diff -uNr olive-0.1.2/effects/internal/timecodeeffect.cpp olive-0.1.2-new/effect
  #include <QPushButton>
  #include <QColorDialog>
  #include <QFontDatabase>
-diff -uNr olive-0.1.2/ui/graphview.cpp olive-0.1.2-new/ui/graphview.cpp
---- olive-0.1.2/ui/graphview.cpp	2019-11-11 03:05:02.000000000 -0300
-+++ olive-0.1.2-new/ui/graphview.cpp	2021-06-30 08:30:05.435847587 -0300
+diff -ruN 0.1.2/olive-0.1.2/ui/graphview.cpp 0.1.2-new/olive-0.1.2/ui/graphview.cpp
+--- 0.1.2/olive-0.1.2/ui/graphview.cpp	2019-11-11 03:05:02.000000000 -0300
++++ 0.1.2-new/olive-0.1.2/ui/graphview.cpp	2021-06-30 08:30:05.435847000 -0300
 @@ -21,6 +21,7 @@
  #include "graphview.h"
  
@@ -31,9 +31,9 @@ diff -uNr olive-0.1.2/ui/graphview.cpp olive-0.1.2-new/ui/graphview.cpp
  #include <QMouseEvent>
  #include <QtMath>
  #include <cfloat>
-diff -uNr olive-0.1.2/ui/timelineheader.cpp olive-0.1.2-new/ui/timelineheader.cpp
---- olive-0.1.2/ui/timelineheader.cpp	2019-11-11 03:05:02.000000000 -0300
-+++ olive-0.1.2-new/ui/timelineheader.cpp	2021-06-30 08:29:39.035772126 -0300
+diff -ruN 0.1.2/olive-0.1.2/ui/timelineheader.cpp 0.1.2-new/olive-0.1.2/ui/timelineheader.cpp
+--- 0.1.2/olive-0.1.2/ui/timelineheader.cpp	2019-11-11 03:05:02.000000000 -0300
++++ 0.1.2-new/olive-0.1.2/ui/timelineheader.cpp	2021-06-30 08:29:39.035772000 -0300
 @@ -21,6 +21,7 @@
  #include "timelineheader.h"
  

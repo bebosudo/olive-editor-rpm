@@ -19,7 +19,7 @@ Patch0:     olive.patch
 %{?rhel:BuildRequires:      qt5-qtbase-devel, qt5-qtmultimedia-devel, qt5-qtsvg-devel, qt5-linguist}
 %{?rhel:BuildRequires:      cmake3}
 %{?fedora:BuildRequires:    cmake}
-BuildRequires:              gcc, ffmpeg-devel, frei0r-devel
+BuildRequires:              g++, gcc, ffmpeg-devel, frei0r-devel
 BuildRequires:              desktop-file-utils, libappstream-glib
 BuildRequires:              mesa-libGL-devel,
 
@@ -44,7 +44,8 @@ This package contains doxygen-generated html API documentation for %{name}.
 
 
 %prep
-%autosetup -p1 -n %{shortname}-%{version}
+%autosetup -n %{shortname}-%{version}
+
 
 %build
 %cmake -DBUILD_DOXYGEN=ON .
